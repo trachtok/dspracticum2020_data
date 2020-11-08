@@ -26,10 +26,10 @@ async function app() {
   var pred = document.getElementById('pred');
   if (p_cat < 0.5) {
       prob = ((1-p_cat)*100).toFixed(2);
-      pred.innerHTML = "<b>Batman</b> (probability=".concat(prob, "%)");
+      pred.innerHTML = "<b>Superman</b> (probability=".concat(prob, "%)");
   } else {
     prob = (p_cat*100).toFixed(2);
-    pred.innerHTML = "<b>Superman</b> (probability=".concat(prob, "%)");
+    pred.innerHTML = "<b>Batman</b> (probability=".concat(prob, "%)");
   }
   /// YOUR CODE ENDS HERE
 
