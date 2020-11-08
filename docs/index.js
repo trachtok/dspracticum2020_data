@@ -18,22 +18,22 @@ async function app() {
   // Make a prediction through the model on our image.
   const imgEl = document.getElementById('img');
   const result = await net.predict(preprocessImage(imgEl));
-  const p_bat = result.dataSync()[0];
+  const p_cat = result.dataSync()[0];
   console.log('Prediction done');
 
   // For the assignment, change this
   // YOUR CODE STARTS HERE
   var pred = document.getElementById('pred');
-  if (p_bat < 0.5) {
-      prob = ((1-p_bat)*100).toFixed(2);
+  if (p_cat < 0.5) {
+      prob = ((1-p_cat)*100).toFixed(2);
       pred.innerHTML = "<b>Batman</b> (probability=".concat(prob, "%)");
   } else {
-    prob = (p_bat*100).toFixed(2);
+    prob = (p_cat*100).toFixed(2);
     pred.innerHTML = "<b>Superman</b> (probability=".concat(prob, "%)");
   }
   /// YOUR CODE ENDS HERE
 
-  return(p_bat);
+  return(p_cat);
 }
 
 app();
